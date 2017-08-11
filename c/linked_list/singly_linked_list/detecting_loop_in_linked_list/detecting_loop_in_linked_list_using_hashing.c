@@ -31,7 +31,7 @@ int detecting(struct node* a[]){
 		printf("Empty linked list\n");
 	}
 }
-
+// hashing function with high collision rate
 int hashing(struct node * ptr){
 	int sum=0;
 	int number=ptr;
