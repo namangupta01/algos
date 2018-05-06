@@ -1,4 +1,4 @@
-//Depth first search using adjacency matrix
+//Depth first search traversal using adjacency matrix
 
 #include <iostream>
 using namespace std;
@@ -43,7 +43,7 @@ int main(){
 	for(int i=0; i<number_of_vertices; i++){
 		visited_vertex[i] = 0; //Zero indicates unvisited node and one represent visited node
 	}
-	cout << "Print nodes in DFS:"<< endl;
+	cout << "Traverse vertices or nodes in DFS:"<< endl;
 	printVertices(edges, 0, visited_vertex, number_of_vertices);
 }
 
@@ -63,7 +63,7 @@ int main(){
 // 3 5
 // 5 4
 // 4 1
-// Print nodes in DFS:
+// Traverse vertices or nodes in DFS:
 // 0
 // 1
 // 2
