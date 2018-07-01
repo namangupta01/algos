@@ -29,6 +29,8 @@ public class AdvancedGCD {
 }
 
 /*
+
+
 Advanced GCD algo si used to find the GCD of numbers whose one number is out of
 the range of int and long and other number is in the range
 
@@ -37,4 +39,8 @@ we use concept : let a bog number n, then
     n%a = ((n/10)*10 + n%10)%a == (((n/10)*10)%a + (n%10)%a)%a
     n/10 ====> ((n/100)*10)%a + (((n/10)%10)%a)%a
     and so on....
+After finding n%a use Euclid algo to find the GCD
+================================
+Complexity is O(b) + O(log(a))
+==============================
  */
