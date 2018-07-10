@@ -19,7 +19,6 @@ public class TripletSum1 {
     public static void main(String[] args) {
         int arr[] = {2, 6, 8, 5, 4, 3, 0, 2, 2, 1};
         int num = 5;
-//        mergeSort(arr, 0, arr.length-1);
         findTriplets(arr, num);
     }
 }
