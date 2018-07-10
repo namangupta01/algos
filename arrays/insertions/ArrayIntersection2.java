@@ -75,4 +75,5 @@ public class ArrayIntersection2 {
 }
 // In this merge algorithm use merge sort + binary search which will make complexity to
 //(nlogn + mlogn)
+// Only used when elements in arr2 is unique
 
