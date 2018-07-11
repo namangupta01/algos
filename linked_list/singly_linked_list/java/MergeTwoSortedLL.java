@@ -61,29 +61,12 @@ public class MergeTwoSortedLL {
                 }
             }
         }
-        while(head1!=null){
-            if (temp==null){
-                head = head1;
-                head1 = head1.next;
-                temp = head;
-            }
-            else{
-                temp.next = head1;
-                temp = temp.next;
-                head1 = head1.next;
-            }
+        if (head1!=null){
+            temp.next = head1;
         }
-        while (head2!=null){
-            if (head==null){
-                head = head2;
-                head2 = head2.next;
-                temp = head;
-            }
-            else{
-                temp.next = head2;
-                temp = temp.next;
-                head2 = head2.next;
-            }
+
+        if (head2!=null){
+            temp.next = head2;
         }
         return head;
     }
@@ -92,6 +75,7 @@ public class MergeTwoSortedLL {
     public static void main(String[] args) {
         Node<Integer> head1 = input();
         Node<Integer> head2 = input();
+        System.out.println("Asd");
         Node<Integer> head = mergeLL(head1, head2);
         printLinkedList(head);
     }
