@@ -28,7 +28,10 @@ public class StackUsingLL<T> {
         return temp;
     }
 
-    public Node<T> getTop(){
+    public Node<T> getTop() throws StackUnderflowException{
+        if (top == null) {
+            throw new StackUnderflowException();
+        }
         return top;
     }
 }
