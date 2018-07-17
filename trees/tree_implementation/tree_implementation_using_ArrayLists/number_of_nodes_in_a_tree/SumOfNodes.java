@@ -66,7 +66,7 @@ public class SumOfNodes {
         System.out.println("Input tree");
         TreeNode<Integer> root = input();
         print(root);
-        System.out.println("Number of nodes are :");
+        System.out.println("Sum of nodes is :");
         System.out.println(sumOfAllNodes(root));
         System.out.println();
     }
