@@ -75,3 +75,60 @@ public class CountLeafNodes {
         printLeafNodes(root);
     }
 }
+
+//    Input tree
+//        Enter the node data
+//        1
+//        Enter number of children of 1th node
+//        3
+//        Enter 1th child of 1
+//        2
+//        Enter 2th child of 1
+//        3
+//        Enter 3th child of 1
+//        4
+//        Enter number of children of 2th node
+//        1
+//        Enter 1th child of 2
+//        5
+//        Enter number of children of 3th node
+//        1
+//        Enter 1th child of 3
+//        6
+//        Enter number of children of 4th node
+//        1
+//        Enter 1th child of 4
+//        7
+//        Enter number of children of 5th node
+//        2
+//        Enter 1th child of 5
+//        10
+//        Enter 2th child of 5
+//        11
+//        Enter number of children of 6th node
+//        2
+//        Enter 1th child of 6
+//        8
+//        Enter 2th child of 6
+//        9
+//        Enter number of children of 7th node
+//        0
+//        Enter number of children of 10th node
+//        0
+//        Enter number of children of 11th node
+//        0
+//        Enter number of children of 8th node
+//        0
+//        Enter number of children of 9th node
+//        0
+//        1
+//        2 3 4
+//        5 6 7
+//        10 11 8 9
+//
+//        Leaf nodes are :
+//        10
+//        11
+//        8
+//        9
+//        7
