@@ -1,0 +1,99 @@
+import java.util.Scanner;
+
+public class RemoveLeafNodes {
+    public static BinaryTreeNode<Integer> takeInputLevelWise(){
+        Scanner s = new Scanner(System.in);
+        int data = s.nextInt();
+        if (data == -1){
+            return null;
+        }
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(data);
+        QueueUsingLinkedList<BinaryTreeNode<Integer>> q = new QueueUsingLinkedList<>();
+        q.enqueue(root);
+        while (!q.isEmpty()){
+            try {
+                BinaryTreeNode<Integer> node = q.dequeue();
+                System.out.println("Enter left child of " + node.data);
+                data = s.nextInt();
+                if (data != -1){
+                    BinaryTreeNode<Integer> left = new BinaryTreeNode<>(data);
+                    node.left = left;
+                    q.enqueue(left);
+                }
+                System.out.println("Enter right child of " + node.data);
+                data = s.nextInt();
+                if (data != -1){
+                    BinaryTreeNode<Integer> right = new BinaryTreeNode<>(data);
+                    node.right = right;
+                    q.enqueue(right);
+                }
+
+            }
+            catch (QueueUnderFlowError e){
+                // Will never reach here
+            }
+        }
+        return root;
+    }
+
+    public static void printLevelWise(BinaryTreeNode<Integer> root) {
+        if (root == null){
+            return;
+        }
+        QueueUsingLinkedList<BinaryTreeNode<Integer>> q = new QueueUsingLinkedList<>();
+        q.enqueue(root);
+        while (!q.isEmpty()){
+            QueueUsingLinkedList<BinaryTreeNode<Integer>> q1 = new QueueUsingLinkedList();
+            while (!q.isEmpty()){
+                try {
+                    BinaryTreeNode<Integer> node = q.dequeue();
+                    System.out.print(node.data + " ");
+                    if (node.left!=null){
+                        q1.enqueue(node.left);
+                    }
+                    if (node.right!=null){
+                        q1.enqueue(node.right);
+                    }
+                }
+                catch (QueueUnderFlowError e){
+                    // Never reach here
+                }
+            }
+            System.out.println();
+            q = q1;
+        }
+    }
+
+    public static BinaryTreeNode<Integer> removeLeafNodes(BinaryTreeNode<Integer> root){
+        if (root == null){
+            return null;
+        }
+        if (root.left == null && root.right == null){
+            return null;
+        }
+        if (root.left!=null ){
+            if (root.left.left == null && root.left.right == null){
+                root.left = null;
+            }
+            else{
+                removeLeafNodes(root.left);
+            }
+        }
+        if (root.right!=null){
+            if (root.right.left == null && root.right.right == null){
+                root.right = null;
+            }
+            else {
+                removeLeafNodes(root.right);
+            }
+        }
+        return root;
+    }
+
+
+    public static void main(String[] args) {
+        BinaryTreeNode<Integer>root = takeInputLevelWise();
+        printLevelWise(root);
+        printLevelWise(removeLeafNodes(root));
+    }
+}
